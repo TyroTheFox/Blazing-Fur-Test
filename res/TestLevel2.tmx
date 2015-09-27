@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="60" height="20" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="Collision" tilewidth="16" tileheight="16">
+  <image source="../../Platformer Test 2/res/collision.png" width="16" height="16"/>
+ </tileset>
+ <tileset firstgid="2" name="Level Tiles" tilewidth="16" tileheight="16">
+  <image source="../../Platformer Test 2/res/level.png" width="16" height="32"/>
+ </tileset>
+ <layer name="Collision" width="60" height="20">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+2TQQoAIAgE8/+f7tIpQq3MYN0BT4nuQEqrg4yqAn2xoS829P2LTPVqfhXoi02G7+ubPMlSBfpic+IbcY/ajPlN27Gbw7MvGstn9R6VI/s/ay5i9ETkzPT1emh9t1mt2YjVARmNt2/AEgAA
+  </data>
+ </layer>
+ <layer name="Tiles" width="60" height="20">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3TOxIAEAwE0Ezc/84alSIJgogttmLY58NEVD4Jt9zuAS+88MILb2wvd8nu/e1+4X3Pu/tPRvNGCry5M+P1+I/SGv2YtMdoD8t+u854xOvV4/R7liyszPHoedJrdUjzVrtqa2dMBUAd5PnAEgAA
+  </data>
+ </layer>
+</map>

@@ -46,17 +46,19 @@ public class BlockMap {
 				temp = new Cell(x, y, a + (x * tmap.getTileWidth()), b + (y * tmap.getTileHeight()));
 				grid[x][y] = temp;
 				int tileID = tmap.getTileId(x, y, 0);
-					if (tileID == 0) {
-						grid[x][y].cellType = 0;	
-						grid[x][y].intSlickRect();
-					}
-					if(tileID == 1){
-						grid[x][y].cellType = 1;
-						grid[x][y].intSlickRect();
-					}
-
-					}
+				if (tileID == 0) {
+					grid[x][y].cellType = 0;	
+					grid[x][y].intSlickRect();
+				}
+				if(tileID == 1){
+					grid[x][y].cellType = 1;
+					grid[x][y].intSlickRect();
+				}
+			}
 		}
+//		System.out.println("Object Count: "+tmap.getObjectCount(0));
+//		System.out.println("Object Name: "+tmap.getObjectName(0, 0));
+//		System.out.println("Object X:" + tmap.getObjectX(0, 0) + " Y:" + tmap.getObjectY(0, 0) + " Width:" + tmap.getObjectWidth(0, 0) + " Height:" + tmap.getObjectHeight(0, 0));
 	}
 	
 	/**

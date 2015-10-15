@@ -1,8 +1,11 @@
 package core;
 
+import java.awt.Point;
 import java.util.ArrayList;
 
+import org.jbox2d.dynamics.FixtureDef;
 import org.newdawn.fizzy.Body;
+import org.newdawn.fizzy.StaticBody;
 import org.newdawn.fizzy.World;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
@@ -38,6 +41,18 @@ public class Level {
 	
 	//Debug Switches
 	Boolean debugPhysRend = false, debugJBox2D = false;
+
+	Point position;
+	//Physics Body Aspects
+	FixtureDef fd;
+
+	//Offsets
+	int offsetX = -100;
+	int offsetY = 100; 
+	int offsetFizzY = -100; 
+	int offsetFizzX = -100;
+	float fizX = 0;
+	float fizY = 0;
 	
 	//Offsets
 	float cameraOffsetX = 0;
@@ -70,13 +85,24 @@ public class Level {
 		world.setGravity(1.0f);
 		
 		//Adds each Grid data to the level's World
-		for (int x = 0; x < camera.map.getWidth(); x++) {
-			for (int y = 0; y < camera.map.getHeight(); y++) {
-				if(grid[x][y].isWall()){
-					world.add(grid[x][y].getObjRect());		
-				}
-			}
-		}	
+//		for (int x = 0; x < camera.map.getWidth(); x++) {
+//			for (int y = 0; y < camera.map.getHeight(); y++) {
+//				if(grid[x][y].isWall()){
+//					world.add(grid[x][y].getObjRect());		
+//				}
+//			}
+//		}	
+		System.out.println("Object Count: "+map.getObjectCount(0));
+		for (int x = 0; x < camera.map.getObjectCount(0); x++) {
+			//Physics Objects
+			org.newdawn.fizzy.Rectangle fizRect = new org.newdawn.fizzy.Rectangle(map.getObjectWidth(0, x), map.getObjectHeight(0, x));
+			Body<Object> objRect = new StaticBody<Object>(fizRect, map.getObjectX(0, x) + offsetFizzX, map.getObjectY(0, x) + offsetFizzY);
+			objRect.setFriction(0.17f);
+			objRect.setRestitution(0);
+			world.add(objRect);
+			System.out.println("Object Name: " + map.getObjectName(0, x));
+			System.out.println("Object X:" + map.getObjectX(0, x) + " Y:" + map.getObjectY(0, x) + " Width:" + map.getObjectWidth(0, x) + " Height:" + map.getObjectHeight(0, x));
+		}
 		
 		//Slope List
 		slopeList = new ArrayList<Slope>();
@@ -141,6 +167,7 @@ public class Level {
 		grid = worldMap.getGrid();
 		//Updates Map
 		worldMap.updateMap((int)(camera.getControlX() + cameraFOffsetX), (int)(camera.getControlY() + cameraFOffsetY)); 
+		
 		//Updates Physics Model
 	    world.update(delta * 0.01f);
 	}

@@ -44,14 +44,18 @@ public class Cell {
 		position = new Point(x, y);
 		//Cell Type
 		cellType = FREE;
+		
+		initFizRect(x2, y2);
+	}
+	
+	public void initFizRect(int x, int y){
 		//Physics Objects
 		fizRect = new org.newdawn.fizzy.Rectangle(15, 15);
-		objRect = new StaticBody<Object>(fizRect, x2 + offsetFizzX, y2 + offsetFizzY);
-		fizX = x2 + offsetFizzX;
-		fizY = y2 + offsetFizzY;
+		objRect = new StaticBody<Object>(fizRect, x + offsetFizzX, y + offsetFizzY);
+		fizX = x + offsetFizzX;
+		fizY = y + offsetFizzY;
 		objRect.setFriction(0.17f);
 		objRect.setRestitution(0);
-		
 	}
 	
 	/**

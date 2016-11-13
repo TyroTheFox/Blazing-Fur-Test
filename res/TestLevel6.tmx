@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="400" height="15" tilewidth="15" tileheight="15" nextobjectid="14">
- <tileset firstgid="1" name="Collision" tilewidth="15" tileheight="15" tilecount="1">
-  <image source="../../Platformer Test/res/collision.png" width="16" height="16"/>
+ <tileset firstgid="1" name="Collision" tilewidth="15" tileheight="15" tilecount="4" columns="2">
+  <image source="collision2.png" width="32" height="32"/>
  </tileset>
- <tileset firstgid="2" name="Level" tilewidth="15" tileheight="15" tilecount="2">
-  <image source="../../Platformer Test/res/level.png" width="16" height="32"/>
+ <tileset firstgid="5" name="Level" tilewidth="15" tileheight="15" tilecount="4" columns="1">
+  <image source="level.png" width="16" height="32"/>
  </tileset>
- <tileset firstgid="4" name="Jump Reset" tilewidth="15" tileheight="15" tilecount="1">
-  <image source="../../Platformer Test/res/collision.png" width="16" height="16"/>
+ <tileset firstgid="9" name="Jump Reset" tilewidth="15" tileheight="15" tilecount="1" columns="1">
+  <image source="collision.png" width="16" height="16"/>
  </tileset>
  <objectgroup name="Test">
   <object id="3" name="Floor" type="Floor" x="-1" y="210" width="6001" height="14"/>
@@ -21,7 +21,7 @@
  </layer>
  <layer name="Level" width="400" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3VIQ7AMAwEQcv5/59DCqqg5EhTacBIBgvMrqtqAMCBfnz9BwD/Yj8ASNgPABL2A4CE/QAgsbsfGo1Go9H0ct/8n0aj0WjubOyHRqPRaJLGfmg0Go0maeyHRqPRaJLGfmg0Go0maXb3AwDe7AcAiQaA0ATu3ULuwF0AAA==
+   H4sIAAAAAAAAC+3VIQ7AMAwEQRPn/08OKaiCkiNNpQEjGSwwu66qAQAH+vH1HwD8i/0AIGE/AEjYDwAS9gOAxO5+aDQajUbTy33zfxqNRqO5s7EfGo1Go0ka+6HRaDSapLEfGo1Go0ka+6HRaDSapNndDwB4sx8AJBoAQhM+yMBfwF0AAA==
   </data>
  </layer>
 </map>
